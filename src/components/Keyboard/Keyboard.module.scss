@@ -1,0 +1,29 @@
+$key-gap: 4px;
+
+.Keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: $key-gap;
+}
+
+.KeyRow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: $key-gap;
+}
+
+.Key {
+  border: none;
+  border-radius: 4px;
+  background: #d3d6da;
+  width: 40px;
+  height: 55px;
+  font-size: 20px;
+  font-weight: 900;
+
+  &_game {
+    width: 55px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,45 @@
+$containerWidth: 30px;
+$containerGap: 2px;
+$descrWidth: calc(($containerWidth - ($containerGap * 2)) / 3);
+
+.Container {
+  display: flex;
+  width: $containerWidth;
+  height: 100%;
+  gap: $containerGap;
+  margin: 0;
+  padding: 0;
+}
+
+
+.DescrContainer {
+  width: $descrWidth;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+}
+
+.Descr {
+  width: $descrWidth;
+  height: $descrWidth;
+  border-radius: 50%;
+  background: black;
+  margin: 0;
+  padding: 0;
+
+  &_green {
+    background: green;
+  }
+  &_orange {
+    background: orange;
+  }
+  &_red {
+    background: red;
+  }
+}
