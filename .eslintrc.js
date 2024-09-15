@@ -24,8 +24,9 @@ module.exports = {
     ],
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }], // Use TypeScript ESLint's rule
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'no-unused-vars': 'off',
+    'no-debugger': 'off',
     eqeqeq: ['error', 'always'],
   },
   settings: {
@@ -37,7 +38,7 @@ module.exports = {
         map: [['@', './src']],
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },
-      typescript: {}, // Enable TypeScript support for import statements
+      typescript: {},
     },
   },
 }

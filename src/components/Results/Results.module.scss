@@ -1,0 +1,47 @@
+.Container {
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.Row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+%codeUI {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+.Answer {
+  @extend %codeUI;
+  background: white;
+  box-shadow: 0 0 0 1px black, 0 0 0 2px white;
+}
+
+.Result {
+  @extend %codeUI;
+  border-radius: 50%;
+
+  &_green {
+    background: green;
+  }
+  &_orange {
+    background: orange;
+  }
+  &_red {
+    background: red;
+  }
+}

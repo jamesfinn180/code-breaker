@@ -1,3 +1,6 @@
+@use '@styles/animation';
+@use '@styles/colours' as c;
+
 $containerWidth: 30px;
 $containerGap: 2px;
 $descrWidth: calc(($containerWidth - ($containerGap * 2)) / 3);
@@ -9,6 +12,11 @@ $descrWidth: calc(($containerWidth - ($containerGap * 2)) / 3);
   gap: $containerGap;
   margin: 0;
   padding: 0;
+
+  &_pointer {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 
@@ -34,12 +42,17 @@ $descrWidth: calc(($containerWidth - ($containerGap * 2)) / 3);
   padding: 0;
 
   &_green {
-    background: green;
+    background: c.$green;
   }
   &_orange {
-    background: orange;
+    background: c.$orange;
   }
   &_red {
-    background: red;
+    background: c.$red;
   }
+}
+
+.Pointer {
+  color: white;
+  animation: 1.5s sideFloat infinite;
 }

@@ -1,3 +1,5 @@
+@use '@styles/animation';
+
 .Row {
   width: 100%;
   display: flex;
@@ -5,4 +7,14 @@
   justify-content: center;
   flex-grow: 1;
   gap: 6px;
+  opacity: 0;
+
+  // Fade each row in sequentially when page loads
+  animation: fadeIn 1s ease-in forwards;
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{($i - 1) * 0.2}s; 
+    }
+  }
+
 }

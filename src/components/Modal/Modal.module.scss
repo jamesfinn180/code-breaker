@@ -1,0 +1,83 @@
+@use '@styles/animation';
+@use '@styles/utils' as u;
+
+.Background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.85);
+
+  animation: 0.75s fadeIn;
+}
+
+.Modal {
+  width: 400px;
+  height: 600px;
+  border: solid 2px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 20px;
+
+  margin-top: -700px;
+  animation: 0.4s flyDown forwards;
+  animation-delay: 0.4s;
+
+  > h1 {
+    text-align: center;
+    color: white;
+  }
+  > p {
+    text-align: left;
+    color: white;
+    margin: 10px 0;
+  }
+}
+
+
+.BtnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 50px;
+
+  &__Sub {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.Button {
+  display: block;
+  width: fit-content;
+  font-size: 16px;
+  border-radius: 4px;
+  @include u.button(white);
+
+  &_pill {
+    border-radius: 20px;
+    @include u.button(lime);
+  }
+}
+
+.Gap {
+  flex-grow: 1;
+}
+
+.Para {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  
+  > strong {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,20 @@
+@mixin button($bgColour) {
+  cursor: pointer;
+  outline: none;
+  border: solid 2px black;
+  box-shadow: 0 0 0 1px $bgColour;
+  background: $bgColour;
+  font-weight: 700;
+  padding: 10px 30px;
+  transition: all 0.15s;
+
+  &:hover {
+    padding-top: 11px;
+    padding-bottom: 9px;
+  }
+
+  &:active {
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+}

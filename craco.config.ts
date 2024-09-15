@@ -6,6 +6,9 @@ const config = {
       '@components': path.resolve(__dirname, 'src/components'),
       '@consts': path.resolve(__dirname, 'src/consts'),
       '@utils': path.resolve(__dirname, 'src/utils'),
+      '@datatypes': path.resolve(__dirname, 'src/datatypes'),
+      '@slices': path.resolve(__dirname, 'src/slices'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
     },
   },
 }

@@ -16,3 +16,21 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+
+}
+
+.HowTo {
+  font-size: 26px;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

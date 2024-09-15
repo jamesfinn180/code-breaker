@@ -3,15 +3,32 @@ import styles from './GameRow.module.scss'
 import { GameInput } from '@components/GameInput'
 import { generateNumArray } from '@utils/utils'
 import { GAME_NUM_CODE } from '@consts/game'
-import { GameRowDescription } from './GameRowDescription'
+import {
+  GameRowDescription,
+  GameRowFiller,
+  GameRowPointer,
+} from './GameRowDescription'
 
-export const GameRow: React.FC = () => {
+interface IGameRow {
+  isCompletedRow: boolean
+  isActiveRow: boolean
+  rowGuesses: string[]
+}
+
+export const GameRow: React.FC<IGameRow> = (props) => {
+  const { isActiveRow, isCompletedRow, rowGuesses } = props
+
   return (
     <div className={styles.Row}>
-      {generateNumArray(GAME_NUM_CODE).map((i) => (
-        <GameInput key={i} />
+      {isActiveRow ? <GameRowPointer /> : <GameRowFiller />}
+      {generateNumArray(GAME_NUM_CODE).map((num, i) => (
+        <GameInput key={num} value={rowGuesses[i] || ''} />
       ))}
-      <GameRowDescription />
+      {isCompletedRow ? (
+        <GameRowDescription rowGuesses={rowGuesses} />
+      ) : (
+        <GameRowFiller />
+      )}
     </div>
   )
 }
