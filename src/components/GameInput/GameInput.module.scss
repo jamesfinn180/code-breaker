@@ -1,4 +1,10 @@
 @use '@styles/animation';
+@use '@styles/colours' as c;
+
+.Container {
+  position: relative;
+  cursor: pointer;
+}
 
 .Input {
   width: 50px;
@@ -11,5 +17,27 @@
 
   &_swell {
     animation: 0.35s swell;
+  }
+}
+
+.Marker {
+  position: absolute;
+  margin-left: 35%;
+  width: 30%;
+  height: 3px;
+  bottom: 13%;
+  left: 0;
+  box-shadow: 0 0 0 1px white;
+
+  animation: 0.5s growRight;
+  
+  &_green {
+    background: c.$green
+  }
+  &_orange {
+    background: c.$orange
+  }
+  &_red {
+    background: c.$red
   }
 }

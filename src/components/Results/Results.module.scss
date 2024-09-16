@@ -1,3 +1,5 @@
+@use '@styles/colours' as c;
+
 .Container {
   width: 100px;
   display: flex;
@@ -19,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
   font-weight: bold;
   color: black;
 }
@@ -36,12 +38,12 @@
   border-radius: 50%;
 
   &_green {
-    background: green;
+    background: c.$green;
   }
   &_orange {
-    background: orange;
+    background: c.$orange;
   }
   &_red {
-    background: red;
+    background: c.$red;
   }
 }

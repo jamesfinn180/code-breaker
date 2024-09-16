@@ -24,95 +24,70 @@ export const PERMITTED_KEYS_PRESSED = [
 
 export const colourConverter = (key: number) => {
   switch (key) {
-    case 1:
-      // Soft Lavender
+    case 1: // Soft Lavender
       return {
         primary: '#e6e6fa',
         secondary: '#f0f0ff',
-        symbol: '◾',
       }
-    case 2:
-      // Pale Peach
+    case 2: // Pale Peach
       return {
         primary: '#ffdab9',
         secondary: '#ffe5d9',
-        symbol: '🔷',
       }
-    case 3:
-      // Mint Green
+    case 3: // Mint Green
       return {
         primary: '#bef8be',
         secondary: '#b3ffb3',
-        symbol: '▲',
       }
-    case 4:
-      // Baby Blue
+    case 4: // Baby Blue
       return {
         primary: '#bfefff',
         secondary: '#d9f1ff',
-        symbol: '★',
       }
-    case 5:
-      // Light Brown
+    case 5: // Light Brown
       return {
         primary: '#decbbe',
         secondary: '#f4b8b8',
-        symbol: '♥',
       }
-    case 6:
-      // Butter Yellow
+    case 6: // Butter Yellow
       return {
         primary: '#ffffe0',
         secondary: '#fffff5',
-        symbol: '▼',
       }
-    case 7:
-      // Sky Blue
+    case 7: // Sky Blue
       return {
-        primary: '#a9dff5',
+        primary: '#94cee5',
         secondary: '#a3d9f4',
-        symbol: '♠',
       }
-    case 8:
-      // Lavender Blush
+    case 8: // Lavender Blush
       return {
         primary: '#ffdae6',
         secondary: '#fffbfa',
-        symbol: '♣',
       }
-    case 9:
-      // Pale Turquoise
+    case 9: // Pale Turquoise
       return {
-        primary: '#afeeee',
+        primary: '#7ee7e7',
         secondary: '#c8f5f5',
-        symbol: '',
       }
-    case 10:
-      // Peach Puff
+    case 10: // Peach Puff
       return {
         primary: '#ffdab9',
         secondary: '#ffe4e1',
-        symbol: '&#10060;',
       }
-    case 11:
-      // Pale Goldenrod
+    case 11: // Pale Goldenrod
       return {
         primary: '#eee8aa',
         secondary: '#f6f8ce',
-        symbol: '',
       }
-    case 12:
-      // Light Pink
+    case 12: // Light Pink
       return {
         primary: '#ffb6c1',
         secondary: '#ffc0cb',
-        symbol: '',
       }
     default:
       return {
         primary: '#ffffff',
         secondary: '#000000',
-        symbol: '',
       }
   }
 }

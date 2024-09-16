@@ -1,5 +1,5 @@
 import { GAME_NUM_CODE, GAME_GUESSES } from '@consts/game'
-import { IGameState } from '@datatypes/game'
+import { IGameState, IMark } from '@datatypes/game'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { generateGameCode } from '@utils/utils'
 import { AppThunk } from '../store'
@@ -16,6 +16,7 @@ const initialGameState: IGameState = {
   gameStatus: 'active',
   winsAndLosses: initialWinsLosses,
   showModal: false,
+  gameMarks: {},
 }
 
 export const gameSlice = createSlice({
@@ -76,10 +77,21 @@ export const gameSlice = createSlice({
       state.guesses = [[]]
       state.code = generateGameCode()
       state.winsAndLosses = getWinLossRatioStorage()
+      state.gameMarks = {}
     },
 
     setShowModal: (state, action: PayloadAction<boolean>) => {
       state.showModal = action.payload
+    },
+
+    setGameMarks: (state, action: PayloadAction<IMark>) => {
+      const mark = action.payload
+      state.gameMarks[mark.mark] = mark
+    },
+
+    removeGameMark: (state, action: PayloadAction<string>) => {
+      const markKey = action.payload
+      delete state.gameMarks[markKey]
     },
   },
 })
@@ -91,6 +103,8 @@ export const {
   setGameStatus,
   resetGame,
   setShowModal,
+  setGameMarks,
+  removeGameMark,
 } = gameSlice.actions
 
 export default gameSlice.reducer

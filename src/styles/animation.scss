@@ -25,3 +25,8 @@
   70% { margin-top: 50px; }
   100% { margin-top: 0; }
 }
+
+@keyframes growRight {
+  from { width: 0; }
+  to { width: 30%; }
+}

@@ -19,4 +19,15 @@ export interface IGameState {
   gameStatus: 'win' | 'lose' | 'active'
   winsAndLosses: IWinsAndLosses
   showModal: boolean
+  gameMarks: IGameMarks
+}
+
+export interface IMark {
+  mark: string
+  colour: 'green' | 'red'
+  position: number
+}
+
+export interface IGameMarks {
+  [key: string]: IMark
 }

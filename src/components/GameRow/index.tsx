@@ -22,7 +22,7 @@ export const GameRow: React.FC<IGameRow> = (props) => {
     <div className={styles.Row}>
       {isActiveRow ? <GameRowPointer /> : <GameRowFiller />}
       {generateNumArray(GAME_NUM_CODE).map((num, i) => (
-        <GameInput key={num} value={rowGuesses[i] || ''} />
+        <GameInput key={num} value={rowGuesses[i] || ''} pos={i} />
       ))}
       {isCompletedRow ? (
         <GameRowDescription rowGuesses={rowGuesses} />
