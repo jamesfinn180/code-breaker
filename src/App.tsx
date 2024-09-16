@@ -15,12 +15,15 @@ import { PERMITTED_KEYS_PRESSED } from '@utils/utils'
 import { Modal } from '@components/Modal'
 import { ModalWinLoss } from '@components/Modal/ModalWinLoss'
 import { ModalHowTo } from '@components/Modal/ModalHowTo'
+import useFullHeight from '@hooks/useHullHeight'
 
 const App: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { code, gameStatus, showModal, winsAndLosses } = useSelector(
     (state: RootState) => state.game
   )
+
+  useFullHeight()
 
   useEffect(() => {
     dispatch(resetGame())

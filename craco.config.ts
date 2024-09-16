@@ -10,6 +10,7 @@ const config = {
       '@slices': path.resolve(__dirname, 'src/slices'),
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@storage': path.resolve(__dirname, 'src/storage'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
     },
   },
 }

@@ -28,6 +28,7 @@
       "@slices/*": ["src/slices/*"],
       "@styles/*": ["src/styles/*"],
       "@storage/*": ["src/storage/*"],
+      "@hooks/*": ["src/hooks/*"],
     }
   },
   "include": [
