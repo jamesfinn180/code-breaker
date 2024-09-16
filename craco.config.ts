@@ -9,6 +9,7 @@ const config = {
       '@datatypes': path.resolve(__dirname, 'src/datatypes'),
       '@slices': path.resolve(__dirname, 'src/slices'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+      '@storage': path.resolve(__dirname, 'src/storage'),
     },
   },
 }

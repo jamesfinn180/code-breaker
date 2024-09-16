@@ -3,11 +3,18 @@ import { IGameState } from '@datatypes/game'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { generateGameCode } from '@utils/utils'
 import { AppThunk } from '../store'
+import {
+  getWinLossRatioStorage,
+  updateWinLossRatioStorage,
+} from '@storage/winLoss'
+
+export const initialWinsLosses = { wins: 0, losses: 0 }
 
 const initialGameState: IGameState = {
   code: [1, 2, 3, 4],
   guesses: [[]],
   gameStatus: 'active',
+  winsAndLosses: initialWinsLosses,
   showModal: false,
 }
 
@@ -52,11 +59,15 @@ export const gameSlice = createSlice({
       const g = [...state.guesses]
       const userGuessCode = g[g.length - 1].join('')
       if (userGuessCode === state.code.join('')) {
+        // User has Won
         state.gameStatus = 'win'
         state.showModal = true
+        updateWinLossRatioStorage({ wins: 1 })
       } else if (g.length >= GAME_GUESSES) {
+        // User has Lost
         state.gameStatus = 'lose'
         state.showModal = true
+        updateWinLossRatioStorage({ losses: 1 })
       }
     },
 
@@ -64,6 +75,7 @@ export const gameSlice = createSlice({
       state.gameStatus = 'active'
       state.guesses = [[]]
       state.code = generateGameCode()
+      state.winsAndLosses = getWinLossRatioStorage()
     },
 
     setShowModal: (state, action: PayloadAction<boolean>) => {

@@ -27,6 +27,7 @@
       "@datatypes/*": ["src/datatypes/*"],
       "@slices/*": ["src/slices/*"],
       "@styles/*": ["src/styles/*"],
+      "@storage/*": ["src/storage/*"],
     }
   },
   "include": [

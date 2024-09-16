@@ -18,7 +18,7 @@ import { ModalHowTo } from '@components/Modal/ModalHowTo'
 
 const App: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { code, gameStatus, showModal } = useSelector(
+  const { code, gameStatus, showModal, winsAndLosses } = useSelector(
     (state: RootState) => state.game
   )
 
@@ -54,6 +54,9 @@ const App: React.FC = () => {
       <div className={styles.Container}>
         <div>
           <header className={styles.Header}>
+            <span className={styles.Header__WL}>
+              {winsAndLosses.wins}/{winsAndLosses.losses}
+            </span>
             <p>Code Breaker</p>
             <button
               className={styles.HowTo}
