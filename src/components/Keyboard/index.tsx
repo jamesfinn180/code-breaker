@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Keyboard.module.scss'
 import { GAME_KEYS } from '@consts/game'
-import { generateNumArray } from '@utils/utils'
+import { colourConverter, generateNumArray } from '@utils/utils'
 import { AppDispatch, RootState } from '../../store'
 import { useDispatch, useSelector } from 'react-redux'
 import {
@@ -91,6 +91,7 @@ const Key: React.FC<IKey> = (props) => {
       className={styles.Key}
       data-digit={digit.toString()}
       disabled={disabled}
+      style={{ background: colourConverter(digit).primary }}
       onClick={handleKeyClick}
     >
       {digit}
