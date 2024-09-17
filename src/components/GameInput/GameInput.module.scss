@@ -22,12 +22,13 @@
 
 .Marker {
   position: absolute;
-  margin-left: 35%;
-  width: 30%;
-  height: 3px;
-  bottom: 13%;
+  margin-left: 30%;
+  width: 40%;
+  height: 4px;
+  bottom: 12%;
   left: 0;
-  box-shadow: 0 0 0 1px white;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px black;
 
   animation: 0.5s growRight;
   

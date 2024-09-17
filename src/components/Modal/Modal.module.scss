@@ -81,3 +81,14 @@
     text-decoration: underline;
   }
 }
+
+.MarkExample {
+  display: flex;
+  gap: 5px;
+}
+.InputExtra {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
