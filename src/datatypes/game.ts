@@ -24,7 +24,7 @@ export interface IGameState {
 
 export interface IMark {
   mark: string
-  colour: 'green' | 'red'
+  colour: 'green' | 'red' | 'orange'
   position: number
 }
 

@@ -19,7 +19,9 @@ export const GameInput: React.FC<IGameInput> = (props) => {
   const style = clsx(styles.Input, { [styles.Input_swell]: value !== '' })
   const colNum = value === '' ? 0 : parseInt(value)
 
-  const layMarker = () => {
+  const layMarker = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault()
+
     if (value === '') return
 
     if (gameMarks[value]) {
@@ -29,6 +31,9 @@ export const GameInput: React.FC<IGameInput> = (props) => {
         // Remove mark
         dispatch(removeGameMark(value))
       } else if (colour === 'green') {
+        // Add orange
+        dispatch(setGameMarks({ mark: value, colour: 'orange', position: pos }))
+      } else if (colour === 'orange') {
         // Add red
         dispatch(setGameMarks({ mark: value, colour: 'red', position: pos }))
       }
@@ -46,7 +51,8 @@ export const GameInput: React.FC<IGameInput> = (props) => {
         style={{ background: colourConverter(colNum).primary }}
         value={value}
         readOnly
-        onClick={layMarker}
+        onMouseDown={layMarker}
+        onFocus={(e) => e.target.blur()}
       />
       {gameMarks[value] && <InputMarker mark={gameMarks[value]} pos={pos} />}
     </div>
@@ -59,16 +65,19 @@ interface IInputMarker {
 }
 const InputMarker: React.FC<IInputMarker> = (props) => {
   const { mark, pos } = props
-  const [mColour, setMColour] = useState<IMark['colour'] | 'orange' | ''>('')
+  const [mColour, setMColour] = useState<IMark['colour'] | ''>('')
 
   useEffect(() => {
+    const c = mark.colour
     // GREEN: green for correct pos, orange everywhere else
     if (mark.colour === 'green') {
-      if (mark.position === pos) setMColour('green')
+      if (mark.position === pos) setMColour(c)
       else setMColour('orange')
     }
+    // ORANGE: orange everywhere
+    else if (mark.colour === 'orange') setMColour(c)
     // RED: red everywhere
-    else if (mark.colour === 'red') setMColour('red')
+    else if (mark.colour === 'red') setMColour(c)
   }, [mark, pos])
 
   return mColour !== '' ? (
