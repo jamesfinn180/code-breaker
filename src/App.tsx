@@ -12,14 +12,14 @@ import {
   setShowModal,
 } from '@slices/gameSlice'
 import { PERMITTED_KEYS_PRESSED } from '@utils/utils'
+import useFullHeight from '@hooks/useHullHeight'
 import { Modal } from '@components/Modal'
 import { ModalWinLoss } from '@components/Modal/ModalWinLoss'
 import { ModalHowTo } from '@components/Modal/ModalHowTo'
-import useFullHeight from '@hooks/useHullHeight'
 
 const App: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { code, gameStatus, showModal, winsAndLosses } = useSelector(
+  const { gameStatus, showModal, winsAndLosses } = useSelector(
     (state: RootState) => state.game
   )
 
@@ -46,11 +46,6 @@ const App: React.FC = () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [])
-
-  useEffect(() => {
-    console.log(code)
-    console.log(gameStatus)
-  }, [code, gameStatus])
 
   return (
     <div className={styles.App}>

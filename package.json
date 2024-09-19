@@ -64,6 +64,19 @@
     "eslint-plugin-react": "^7.36.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "gh-pages": "^6.1.1",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^@components/(.*)$": "<rootDir>/src/components/$1",
+      "^@consts/(.*)$": "<rootDir>/src/consts/$1",
+      "^@utils/(.*)$": "<rootDir>/src/utils/$1",
+      "^@datatypes/(.*)$": "<rootDir>/src/datatypes/$1",
+      "^@slices/(.*)$": "<rootDir>/src/slices/$1",
+      "^@styles/(.*)$": "<rootDir>/src/styles/$1",
+      "^@storage/(.*)$": "<rootDir>/src/storage/$1",
+      "^@hooks/(.*)$": "<rootDir>/src/hooks/$1"
+    }
   }
 }

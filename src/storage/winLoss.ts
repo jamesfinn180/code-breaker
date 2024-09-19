@@ -2,7 +2,7 @@ import { LOCAL_STORAGE_PREFIX } from '@consts/game'
 import { IWinsAndLosses, WinsOrLossesT } from '@datatypes/game'
 import { initialWinsLosses } from '@slices/gameSlice'
 
-const WIN_LOSS_STORAGE = `${LOCAL_STORAGE_PREFIX}winLoss`
+export const WIN_LOSS_STORAGE = `${LOCAL_STORAGE_PREFIX}winLoss`
 
 export const getWinLossRatioStorage = () => {
   let winsAndLossStr = localStorage.getItem(WIN_LOSS_STORAGE)

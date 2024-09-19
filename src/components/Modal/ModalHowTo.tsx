@@ -7,7 +7,6 @@ import clsx from 'clsx'
 import { setShowModal } from '@slices/gameSlice'
 import { useDispatch } from 'react-redux'
 import { AppDispatch } from '../../store'
-import { GameInput } from '@components/GameInput'
 import { colourConverter } from '@utils/utils'
 
 export const ModalHowTo: React.FC = () => {
@@ -38,8 +37,8 @@ export const ModalHowTo: React.FC = () => {
       </p>
 
       <p className={styles.Para}>
-        You can click a previous guess to mark it as green. Click it again to
-        mark it red to help you plan your next move.
+        To help plan your next move, you can click a previous guess once to mark
+        it green, twice to mark it orange and three times to mark it red.
       </p>
 
       <div className={styles.MarkExample}>
@@ -58,6 +57,16 @@ export const ModalHowTo: React.FC = () => {
           className={clsx(stylesI.Input, styles.InputExtra)}
         >
           2
+          <span
+            style={{ background: 'orange' }}
+            className={stylesI.Marker}
+          ></span>
+        </div>
+        <div
+          style={{ background: colourConverter(3).primary }}
+          className={clsx(stylesI.Input, styles.InputExtra)}
+        >
+          3
           <span
             style={{ background: '#fc2a2a' }}
             className={stylesI.Marker}
